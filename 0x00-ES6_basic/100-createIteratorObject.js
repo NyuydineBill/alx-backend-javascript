@@ -1,7 +1,7 @@
 export default function createIteratorObject(report) {
   let iterable = [];
 
-  if (!report.allEmployees || typeof report.allEmployees !== "object") {
+  if (!report.allEmployees || typeof report.allEmployees !== 'object') {
     return iterable;
   }
 
@@ -10,7 +10,7 @@ export default function createIteratorObject(report) {
   //   }
 
   iterable = {
-    *[Symbol.iterator]() {
+    * [Symbol.iterator]() {
       for (const value of Object.values(report.allEmployees)) {
         for (const i of value) {
           yield i;
